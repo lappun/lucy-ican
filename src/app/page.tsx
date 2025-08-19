@@ -8,7 +8,6 @@ const GradientText = ({ children }: { children: React.ReactNode }) => (
 
 export default function HomePage() {
   return (
-    // CHANGE IS HERE: We apply the solid background color AND our new starry pattern class.
     <div className="min-h-screen w-full bg-background bg-starry">
       {/* --- Navigation Bar --- */}
       <header className="sticky top-0 z-50 w-full border-b border-gray-200/50 bg-background/80 backdrop-blur-sm dark:border-gray-800/50 dark:bg-background/80">
@@ -49,6 +48,9 @@ export default function HomePage() {
               </a>
             </div>
           </div>
+          <p className="mx-auto mt-4 max-w-2xl text-xs text-gray-500 dark:text-gray-400">
+            By clicking "Notify Me", you agree to receive a one-time email notification when we launch. You may also receive future communications which you can opt-out of at any time.
+          </p>
         </section>
 
         {/* --- Features Section --- */}
@@ -62,10 +64,10 @@ export default function HomePage() {
                 Everything you&apos;ll need to bring your ideas to life.
               </p>
             </div>
-            <div className="mt-16 grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="mt-16 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-2">
               <div className="flex flex-col items-center text-center">
                 <div className="mb-5 flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-purple-100 to-blue-100 shadow-md dark:from-purple-900/50 dark:to-blue-900/50">
-                  <span className="text-4xl" role="img" aria-label="Lightbulb">💡</span>
+                  <span className="text-4xl" role="img" aria-label="Lightbulb">{'\u{1F4A1}'}</span>
                 </div>
                 <h3 className="text-xl font-semibold">Share Your Ideas</h3>
                 <p className="mt-2 text-gray-600 dark:text-gray-400">
@@ -74,7 +76,7 @@ export default function HomePage() {
               </div>
               <div className="flex flex-col items-center text-center">
                 <div className="mb-5 flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-purple-100 to-blue-100 shadow-md dark:from-purple-900/50 dark:to-blue-900/50">
-                  <span className="text-4xl" role="img" aria-label="Handshake">🤝</span>
+                  <span className="text-4xl" role="img" aria-label="Handshake">{'\u{1F91D}'}</span>
                 </div>
                 <h3 className="text-xl font-semibold">Collaborate Together</h3>
                 <p className="mt-2 text-gray-600 dark:text-gray-400">
@@ -83,11 +85,20 @@ export default function HomePage() {
               </div>
               <div className="flex flex-col items-center text-center">
                 <div className="mb-5 flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-purple-100 to-blue-100 shadow-md dark:from-purple-900/50 dark:to-blue-900/50">
-                  <span className="text-4xl" role="img" aria-label="Rocket">🚀</span>
+                  <span className="text-4xl" role="img" aria-label="Rocket">{'\u{1F680}'}</span>
                 </div>
                 <h3 className="text-xl font-semibold">Launch Your Project</h3>
                 <p className="mt-2 text-gray-600 dark:text-gray-400">
                   Turn your polished concepts into real-world projects with community support and resources.
+                </p>
+              </div>
+              <div className="flex flex-col items-center text-center">
+                <div className="mb-5 flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-purple-100 to-blue-100 shadow-md dark:from-purple-900/50 dark:to-blue-900/50">
+                  <span className="text-4xl" role="img" aria-label="Chat Bubble">{'\u{1F4AC}'}</span>
+                </div>
+                <h3 className="text-xl font-semibold">AI Chatbot Support</h3>
+                <p className="mt-2 text-gray-600 dark:text-gray-400">
+                  In the future, get instant answers to your questions via our AI-powered chatbot on WhatsApp.
                 </p>
               </div>
             </div>
@@ -110,6 +121,31 @@ export default function HomePage() {
             </div>
           </div>
         </section>
+
+        {/* --- Terms and Privacy Sections --- */}
+        <section id="terms" className="py-16 sm:py-24 border-t border-gray-200/50 dark:border-gray-800/50">
+          <div className="container mx-auto max-w-4xl px-4">
+            <h2 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-3xl">Terms of Service</h2>
+            <p className="mt-4 text-gray-600 dark:text-gray-400">
+              By using our website and signing up for our waitlist, you agree to these Terms of Service. These terms are a placeholder and will be updated upon our official launch. The service is provided on an "as is" and "as available" basis. We reserve the right to modify or discontinue the service at any time.
+            </p>
+          </div>
+        </section>
+
+        <section id="privacy" className="py-16 sm:py-24 border-t border-gray-200/50 dark:border-gray-800/50">
+          <div className="container mx-auto max-w-4xl px-4">
+            <h2 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-3xl">Privacy Policy</h2>
+            <p className="mt-4 text-gray-600 dark:text-gray-400">
+              Your privacy is important to us. This policy explains what information we collect and how we use it.
+            </p>
+            <ul className="mt-4 list-disc space-y-2 pl-6 text-gray-600 dark:text-gray-400">
+              <li><strong>Information We Collect:</strong> We collect your email address when you sign up for our waitlist.</li>
+              <li><strong>How We Use Information:</strong> We use your email to send you a notification when our service launches and potentially for future updates. We will not sell or share your personal information with third parties.</li>
+              <li><strong>Opt-Out:</strong> You can opt-out of our communications at any time by contacting us at <a href="mailto:webmaster@ideocanvas.com" className="underline">webmaster@ideocanvas.com</a>.</li>
+            </ul>
+          </div>
+        </section>
+
       </main>
 
       {/* --- Footer --- */}
@@ -119,8 +155,8 @@ export default function HomePage() {
             <GradientText>Lucy Ideocanvas</GradientText>
           </div>
           <div className="flex space-x-6">
-            <a href="#" className="hover:text-black dark:hover:text-white">Terms (Coming Soon)</a>
-            <a href="#" className="hover:text-black dark:hover:text-white">Privacy (Coming Soon)</a>
+            <a href="#terms" className="hover:text-black dark:hover:text-white">Terms</a>
+            <a href="#privacy" className="hover:text-black dark:hover:text-white">Privacy</a>
             <a href="#contact" className="hover:text-black dark:hover:text-white">Contact</a>
           </div>
         </div>
